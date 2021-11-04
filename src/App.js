@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
-import User from './components/User';
+import Header from './components/Header';
+import Details from './components/Details';
 
 function App() {
-	const [users, setUsers] = useState([]);
+	const [daily, setDaily] = useState([]);
 
 	useEffect(() => {
 		axios
@@ -13,17 +14,15 @@ function App() {
 			)
 			.then((res) => {
 				console.log(res.data);
-				//				setUsers(res.data.results);
+				setDaily(res.data);
 			})
 			.catch((err) => console.error(err));
 	}, []);
 
 	return (
 		<div className='App'>
-			<h1>RoxBook v.1</h1>
-			{/* {users.map((user) => (
-				<User user={user} key={user.login.uuid} />
-			))} */}
+			<Header daily={daily} />
+			<Details daily={daily} />
 		</div>
 	);
 }
