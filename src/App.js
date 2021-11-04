@@ -8,10 +8,12 @@ function App() {
 
 	useEffect(() => {
 		axios
-			.get('https://randomuser.me/api/?results=5')
+			.get(
+				'https://api.nasa.gov/planetary/apod?api_key=Rz30JyD2a2ysf2lhBMAwC9RgnPpsq0Jliv0jScXG'
+			)
 			.then((res) => {
-				console.log(res.data.results);
-				setUsers(res.data.results);
+				console.log(res.data);
+				//				setUsers(res.data.results);
 			})
 			.catch((err) => console.error(err));
 	}, []);
@@ -19,9 +21,9 @@ function App() {
 	return (
 		<div className='App'>
 			<h1>RoxBook v.1</h1>
-			{users.map((user) => (
+			{/* {users.map((user) => (
 				<User user={user} key={user.login.uuid} />
-			))}
+			))} */}
 		</div>
 	);
 }
