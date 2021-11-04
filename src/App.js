@@ -13,7 +13,7 @@ function App() {
 				'https://api.nasa.gov/planetary/apod?api_key=Rz30JyD2a2ysf2lhBMAwC9RgnPpsq0Jliv0jScXG'
 			)
 			.then((res) => {
-				console.log(res.data);
+				//console.log(res.data);
 				setDaily(res.data);
 			})
 			.catch((err) => console.error(err));

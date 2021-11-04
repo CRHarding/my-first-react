@@ -4,7 +4,10 @@ const Details = (props) => {
 	console.log(props);
 	return (
 		<>
-			<p>{props.explanation}</p>
+			<div>
+				<img src={props.daily.url} alt='NASA daily' />
+				<p>{props.daily.explanation}</p>
+			</div>
 		</>
 	);
 };
